@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="theme-color" content="#070b14" />
-  <meta name="description" content="SHOPITY TITAN — A+ Cybersecurity Global Storefront. Shop Pet Care, Tech, Audio, Wearables & Gaming in USD ($) and EUR (€) with 5% Cashback." />
+  <meta name="theme-color" content="#060913" />
+  <meta name="description" content="SHOPITY TITAN — Banking-Grade A+ Cybersecurity Global Storefront. Shop Pet Care, Smart Tech, Studio Audio, Wearables & Gaming in USD ($) and EUR (€) with 5% Cashback." />
   <meta property="og:title" content="SHOPITY TITAN — A+ Cybersecurity Global Store ($ USD / € EUR)" />
-  <meta property="og:description" content="Server-verified pricing, 5% instant cashback wallet, 15-min Rocket delivery, and OWASP Top 10 cyber defense." />
+  <meta property="og:description" content="HttpOnly Cookie Sessions, PBKDF2-100k Encryption, Stripe PCI-DSS Level 1 Checkout, and 5% Instant Cashback Wallet." />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='9' fill='%232563EB'/%3E%3Cpath d='M18 8L26 12V19C26 24.5 22.5 28.5 18 30C13.5 28.5 10 24.5 10 19V12L18 8Z' stroke='white' stroke-width='2.6' fill='none'/%3E%3Cpath d='M14.5 19L17 21.5L22 16.5' stroke='%2310B981' stroke-width='2.8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" />
   <title>SHOPITY TITAN — A+ Cybersecurity Global Store ($ USD / € EUR)</title>
   <style>
     :root {
       --bg: #f1f5f9;
+      --grid-line: rgba(37, 99, 235, 0.05);
       --surface: #ffffff;
       --surface-glass: rgba(255, 255, 255, 0.88);
       --surface-alt: #e2e8f0;
@@ -31,10 +32,11 @@
     }
 
     [data-theme="dark"] {
-      --bg: #060913;
-      --surface: #0f1626;
-      --surface-glass: rgba(15, 22, 38, 0.86);
-      --surface-alt: #192338;
+      --bg: #050811;
+      --grid-line: rgba(99, 102, 241, 0.06);
+      --surface: #0e1525;
+      --surface-glass: rgba(14, 21, 37, 0.86);
+      --surface-alt: #182238;
       --text: #f8fafc;
       --text-muted: #94a3b8;
       --primary: #6366f1;
@@ -42,16 +44,17 @@
       --accent: #10b981;
       --gold: #fbbf24;
       --danger: #f87171;
-      --border: #283652;
-      --shadow: 0 14px 36px rgba(0, 0, 0, 0.65);
-      --glow: 0 0 18px rgba(99, 102, 241, 0.25);
+      --border: #273552;
+      --shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+      --glow: 0 0 20px rgba(99, 102, 241, 0.28);
     }
 
     [data-theme="neon"] {
-      --bg: #020207;
-      --surface: #090915;
-      --surface-glass: rgba(9, 9, 21, 0.88);
-      --surface-alt: #13132b;
+      --bg: #020206;
+      --grid-line: rgba(0, 245, 212, 0.07);
+      --surface: #080814;
+      --surface-glass: rgba(8, 8, 20, 0.88);
+      --surface-alt: #121229;
       --text: #e0f2fe;
       --text-muted: #7dd3fc;
       --primary: #ff007f;
@@ -60,8 +63,8 @@
       --gold: #ffe600;
       --danger: #ff2a5f;
       --border: #00f5d4;
-      --shadow: 0 0 28px rgba(255, 0, 127, 0.35);
-      --glow: 0 0 16px rgba(0, 245, 212, 0.65);
+      --shadow: 0 0 28px rgba(255, 0, 127, 0.38);
+      --glow: 0 0 16px rgba(0, 245, 212, 0.7);
     }
 
     * {
@@ -77,12 +80,22 @@
 
     body {
       background-color: var(--bg);
+      background-image:
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+      background-size: 36px 36px;
       color: var(--text);
       transition: background-color 0.25s ease, color 0.25s ease;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       overflow-x: hidden;
+    }
+
+    /* Accessible Focus Ring */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
     }
 
     /* Custom Scrollbar */
@@ -103,10 +116,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
       text-align: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
     }
 
     @keyframes gradientFlow {
@@ -123,13 +136,30 @@
       font-weight: 900;
       font-size: 0.71rem;
       letter-spacing: 0.5px;
-      box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.55);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
     }
 
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #022c22;
+      animation: pulse 1.6s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.75); }
+    }
+
+    /* Promo Strip */
     .promo-strip {
-      background: var(--surface-alt);
+      background: var(--surface);
       border-bottom: 1px solid var(--border);
-      padding: 5px 14px;
+      padding: 6px 14px;
       font-size: 0.74rem;
       color: var(--text-muted);
       display: flex;
@@ -140,20 +170,20 @@
     }
 
     .promo-code-chip {
-      background: var(--surface);
+      background: var(--surface-alt);
       border: 1px dashed var(--accent);
       color: var(--accent);
       padding: 1px 7px;
       border-radius: 5px;
-      font-family: monospace;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-weight: 800;
     }
 
     /* Glassmorphic Sticky Header */
     header {
       background: var(--surface-glass);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       box-shadow: var(--shadow);
       position: sticky;
@@ -193,8 +223,8 @@
       font-size: 0.62rem;
       background: var(--surface-alt);
       border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 2px 6px;
+      color: var(--accent);
+      padding: 2px 7px;
       border-radius: 5px;
       font-weight: 800;
       letter-spacing: 0.5px;
@@ -304,7 +334,7 @@
     }
 
     .badge {
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.28);
       color: #ffffff;
       padding: 2px 6px;
       border-radius: 999px;
@@ -312,7 +342,7 @@
       font-weight: 800;
     }
 
-    /* Executive Hero Banner */
+    /* Executive Hero Showcase */
     .hero {
       max-width: 1480px;
       margin: 16px auto 0;
@@ -326,7 +356,7 @@
       padding: 22px 24px;
       box-shadow: var(--shadow);
       display: grid;
-      grid-template-columns: 1.5fr 1fr;
+      grid-template-columns: 1.45fr 1fr;
       gap: 18px;
       align-items: center;
       position: relative;
@@ -346,11 +376,11 @@
       border: 1px solid rgba(16, 185, 129, 0.35);
       padding: 3px 10px;
       border-radius: 999px;
-      margin-bottom: 8px;
+      margin-bottom: 9px;
     }
 
     .hero-text h1 {
-      font-size: 1.65rem;
+      font-size: 1.68rem;
       line-height: 1.25;
       margin-bottom: 6px;
     }
@@ -371,19 +401,24 @@
     .hero-metrics {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 9px;
     }
 
     .metric-tile {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 10px 12px;
+      padding: 11px 13px;
+      transition: 0.2s;
+    }
+
+    .metric-tile:hover {
+      border-color: var(--primary);
     }
 
     .metric-tile strong {
       display: block;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       color: var(--text);
       margin-bottom: 2px;
     }
@@ -479,13 +514,13 @@
       gap: 18px;
     }
 
-    /* Shimmer Skeleton Cards (Shown before API loads) */
+    /* Shimmer Skeleton Cards */
     .skeleton-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 15px;
       padding: 15px;
-      height: 330px;
+      height: 335px;
       position: relative;
       overflow: hidden;
     }
@@ -524,7 +559,7 @@
 
     .product-img {
       width: 100%;
-      height: 170px;
+      height: 172px;
       background: radial-gradient(circle at center, var(--surface-alt), var(--bg));
       border-radius: 11px;
       display: flex;
@@ -558,7 +593,7 @@
     }
 
     .stock-tag {
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.92);
       color: #34d399;
       font-size: 0.65rem;
       font-weight: 800;
@@ -686,8 +721,8 @@
     .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(2, 6, 23, 0.84);
-      backdrop-filter: blur(6px);
+      background: rgba(2, 6, 23, 0.85);
+      backdrop-filter: blur(7px);
       display: none;
       align-items: center;
       justify-content: center;
@@ -889,7 +924,7 @@
     footer {
       background: var(--surface);
       border-top: 1px solid var(--border);
-      padding: 24px 16px;
+      padding: 26px 16px;
       color: var(--text-muted);
       font-size: 0.8rem;
     }
@@ -913,7 +948,7 @@
     .trust-pill {
       background: var(--surface-alt);
       border: 1px solid var(--border);
-      padding: 4px 9px;
+      padding: 5px 10px;
       border-radius: 6px;
       font-size: 0.72rem;
       font-weight: 700;
@@ -935,9 +970,9 @@
 </head>
 <body data-theme="dark">
 
-  <!-- Top A+ Cyber & Live Telemetry Strip -->
+  <!-- Top Cyber Defense & Live Database Status Strip -->
   <div class="flash-bar">
-    <span class="grade-pill">GRADE A+ CYBERSECURITY</span>
+    <span class="grade-pill"><span class="pulse-dot"></span> BANKING-GRADE A+ SECURITY</span>
     <span id="db-live-status">🟢 Cloudflare D1 Edge Database • FX: 1 USD = 0.90 EUR</span>
   </div>
 
@@ -993,9 +1028,9 @@
   <section class="hero">
     <div class="hero-card">
       <div class="hero-text">
-        <div class="hero-eyebrow">🛡️ Zero-Trust Edge Commerce • Dual Currency</div>
+        <div class="hero-eyebrow">🛡️ Zero-Trust Edge Commerce • PCI-DSS Level 1</div>
         <h1><span style="color:var(--primary);">SHOPITY TITAN</span> — Global Storefront</h1>
-        <p>Shop verified Pet Care, Smart Tech, Studio Audio, Wearables & Pro Gaming in official <strong>USD ($)</strong> and <strong>EUR (€)</strong> with server-enforced pricing.</p>
+        <p>Shop verified Pet Care, Smart Tech, Studio Audio, Wearables & Pro Gaming in official <strong>USD ($)</strong> and <strong>EUR (€)</strong> with server-enforced pricing and instant cashback.</p>
         <div class="hero-cta-row">
           <button type="button" class="btn btn-primary" data-action="set-category" data-cat="Pet Care">🐾 Shop Pet Care</button>
           <button type="button" class="btn" data-action="set-category" data-cat="Tech">💻 Shop Tech</button>
@@ -1006,12 +1041,12 @@
 
       <div class="hero-metrics">
         <div class="metric-tile">
-          <strong>🔒 OWASP A+ Hardened</strong>
-          <span>Zero inline JS, Strict CSP & HSTS</span>
+          <strong>🔒 HttpOnly + PBKDF2-100k</strong>
+          <span>Banking-grade session & password defense</span>
         </div>
         <div class="metric-tile">
-          <strong>⚡ Cloudflare D1 Edge</strong>
-          <span>Global sub-50ms inventory sync</span>
+          <strong>💳 Stripe PCI-DSS Level 1</strong>
+          <span>Server-verified global card checkout</span>
         </div>
         <div class="metric-tile">
           <strong>💱 Official Dual FX</strong>
@@ -1019,7 +1054,7 @@
         </div>
         <div class="metric-tile">
           <strong>💎 5% Cashback Wallet</strong>
-          <span>Instant rewards on every order</span>
+          <span>Instant rewards credited on every order</span>
         </div>
       </div>
     </div>
@@ -1070,9 +1105,9 @@
       </div>
       <div class="trust-badges">
         <span class="trust-pill">🛡️ Grade A+ CSP</span>
-        <span class="trust-pill">💳 Stripe 3D Secure</span>
-        <span class="trust-pill">🅿️ PayPal Protected</span>
-        <span class="trust-pill">🔐 SHA-256 + HMAC</span>
+        <span class="trust-pill">🍪 HttpOnly Strict</span>
+        <span class="trust-pill">🔐 PBKDF2-100k</span>
+        <span class="trust-pill">💳 Stripe PCI-DSS L1</span>
       </div>
     </div>
   </footer>
@@ -1098,10 +1133,10 @@
         <button type="button" class="btn" data-action="close-modal" data-modal="soc-modal">✕</button>
       </div>
       <div class="security-grid">
-        <div class="sec-item">✅ Strict CSP (No unsafe-inline JS)</div>
-        <div class="sec-item">✅ Server-Side Price & Promo Check</div>
-        <div class="sec-item">✅ 5-Attempt Brute-Force Lockout</div>
-        <div class="sec-item">✅ 15-Min Idle Auto-Session Lock</div>
+        <div class="sec-item">✅ HttpOnly + SameSite=Strict Cookies</div>
+        <div class="sec-item">✅ PBKDF2-SHA256 (100,000 Rounds)</div>
+        <div class="sec-item">✅ Stripe PCI-DSS Level 1 Gateway</div>
+        <div class="sec-item">✅ Strict CSP + CSRF Origin Shield</div>
       </div>
       <h4 style="margin-bottom:6px;">📡 Live Server SIEM Security Trail</h4>
       <div class="audit-box" id="siem-log-box">Loading security audit trail...</div>
@@ -1193,8 +1228,8 @@
       <div class="form-group">
         <label for="payment-method">Payment Gateway</label>
         <select id="payment-method">
-          <option value="Stripe Global (3D Secure)">💳 Stripe Global (3D Secure USD/EUR)</option>
-          <option value="PayPal Express Checkout">🅿️ PayPal Verified Checkout</option>
+          <option value="Stripe Live">💳 Stripe Global Checkout (PCI-DSS Level 1)</option>
+          <option value="Sandbox Verified">🧪 Sandbox Instant Test Order (No Card Required)</option>
         </select>
       </div>
       <div style="padding:12px; background:var(--surface-alt); border-radius:10px; margin-bottom:12px;">
